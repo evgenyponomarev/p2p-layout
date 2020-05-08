@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="demo.js">
+  <body class="w-100 sans-serif bg-white f6">
+
+    <section class="mw8-ns mw-100-s center bg-white pa3 ph5-ns">
+      <article class="mw-100">
+        <h1 class="f2 code dark-pink">P2P Application Fluence Demo</h1>
+        <p class="gray i">
+            P2P file-sharing application over IPFS via Fluence relay
+        </p>
+        <p class="lh-copy">
+          This is a peer-to-peer file-sharing demo, that uses Fluence protocol to advertise and discover files, and IPFS to upload/download.
+        </p>
+        <p class="lh-copy">
+          First, choose your local file and make it discoverable via Fluence network.
+          Other peers may discover your device as a holder of the file and ask it to provide the file to a publicly accessible IPFS node.
+          Your device will upload the file to the IPFS node and then share its multiaddress with the requesting peer.
+        </p>
+        <p class="lh-copy">
+            <a href="https://fluence.network/" class="pr2">More about Fluence</a>
+            <a href="https://github.com/FluenceLabs/fluence">Documentation</a>
+        </p>
+      </article>
+    </section>
+
+    <section class="mw7 mw8-ns center bg-near-white pa3 ph5-ns mb3 f7">
+      <p class="ttu tracked dark-pink b">Network info</p>
+      <table cellspacing="0">
+        <tbody class="lh-copy">
+          <tr>
+            <td class="pv2 pr4 ttu tracked gray">Peer id</td>
+            <td class="pv2 pr3 code">QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub</td>
+          </tr>
+          <tr>
+            <td class="pv2 pr4 ttu tracked gray">Connected relay id</td>
+            <td class="pv2 pr3 code">QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ <a href="">change</a></td>
+          </tr>
+          <tr>
+            <td class="pv2 pr4 ttu tracked gray">Peers</td>
+            <td class="pv2 pr3 code">7</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mw7 mw8-ns center pa4 ph5-ns pb3 f7">
+      <!-- <p class="ttu tracked dark-pink b">Files list</p> -->
+      <a class="link dim ph3 pv2 mb2 dib white bg-dark-pink" href="#0">Add file +</a>
+
+      <div class="center pa3 ph4 pb4 br2-ns ba b--black-10" style="display:none">
+          <fieldset class="cf bn ma0 pa0">
+            <p class="f7 pa0 mb3 ttu tracked dark-pink">Add file</p>
+            <p class="">Add file from your device or enter IPFS hash</p>
+            <div class="cf">
+              <div class="fl mr2 ba b--black-20 b--dotted bw1 pa2 mb2 db w5 gray">Choose file from your device</div>
+              <input class="bg-animate pointer dim ph3 pv2 mb2 dib white bg-black-70 w4 b--black-70" type="button" value="Browse file">
+            </div>
+            <p class="ttu tracked">or</p>
+            <div class="cf">
+              <input class="fl mr2 input-reset ba b--black-20 pa2 mb0 db w5" placeholder="Paste IPFS hash here" type="text">
+              <input class="fl button-reset bg-animate pointer dim ph3 pv2 mb0 dib white bg-black-70 w4 b--black-70" type="submit" value="Add File">
+            </div>
+          </fieldset>
+      </div>
+    </section>
+
+    <section class="mw7 mw8-ns center pa4 pt3 ph5 br2-ns ba b--black-10 mb4">
+      <fieldset class="cf bn ma0 pa0">
+        <p class="f7 pa0 mb3 ttu tracked dark-pink b">Add file</p>
+        <p class="">Add file from your device or enter IPFS hash</p>
+        <div class="cf">
+          <div class="fl mr2 ba br2 b--black-20 b--dotted bw1 pa2 mb2 db w5 gray">Choose file from your device</div>
+          <input class="bg-animate pointer dim ph3 pv2 mb2 dib white bg-black-70 w4 b--black-70" type="button" value="Browse file">
+        </div>
+        <p class="ttu tracked">or</p>
+        <div class="cf">
+          <input class="fl mr2 input-reset ba b--black-20 pa2 mb0 db w5" placeholder="Paste IPFS hash here" type="text">
+          <input class="fl button-reset bg-animate pointer dim ph3 pv2 mb0 dib white bg-black-70 w4 b--black-70" type="submit" value="Add File">
+        </div>
+      </fieldset>
+    </section>
+
+
+    <section class="mw7 mw8-ns center pa4 ph5-ns m0 bg-near-white">
+      <!-- <p class="ttu tracked dark-pink b">Files list</p> -->
+      <table class="w-100 center" cellspacing="0">
+        <thead class="f7">
+          <tr>
+            <th class="tl pv3 pr3 ttu tracked gray">Preview</th>
+            <th class="tl pv3 ttu tracked gray">File</th>
+            <th class="tl pv3 ttu tracked gray">Status</th>
+            <th class="tl pv3 ttu tracked gray">Logs</th>
+          </tr>
+        </thead>
+        <tbody class="lh-copy">
+          <tr class="hover-bg-light-gray">
+            <td class="pv3"><img class="w3 h3 ba b--black-20" src="https://utweb.trontv.com/gui/static/imgs/ut-web-logo-black-background.svg"/></td>
+            <td class="pv3">
+              IPFS hash: <span class="code gray f7">QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub</span><br/>
+              Fluence address: <span class="code gray f7">/f/f/f/f/QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub</span>
+            </td>
+            <td class="pv3 green b code f7">Advertised</td>
+            <td class="pv3 code f7"><a href="">See logs</a></td>
+          </tr>
+          <tr>
+            <td colspan="4" class="bb b--black-10">
+              <div class="mb3 pa3 code bg-white f7">
+                > added new file<br/>
+                > added new file<br/>
+                > added new file<br/>
+                ...
+              </div>
+            </td>
+          </tr>
+          <tr class="hover-bg-light-gray">
+            <td class="pv3 bb b--black-10"><img class="w3 h3 ba b--black-20" src="https://pbs.twimg.com/profile_images/1161302284648796162/QScJtuzW_400x400.jpg"/></td>
+            <td class="pv3 bb b--black-10">
+              IPFS hash: <span class="code gray f7">QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ</span><br/>
+              Fluence address: <span class="code gray f7">/f/f/f/f/QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ</span>
+            </td>
+            <td class="pv3 bb b--black-10 red b code f7">Status</td>
+            <td class="pv3 bb b--black-10 code f7"><a href="">See logs</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+
+<br/>
+<br/>
+<br/>
+
+  </body>
+</html>
