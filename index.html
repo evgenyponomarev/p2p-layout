@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
   <link rel="stylesheet" href="demo.css">
-  <link rel="stylesheet" href="demo.js">
   <body class="w-100 sans-serif bg-white f6">
 
     <section class="mw8-ns mw-100-s center bg-white pa3 ph5-ns">
@@ -38,7 +37,12 @@
           </tr>
           <tr>
             <td class="pv2 pr4 ttu tracked gray">Connected relay id</td>
-            <td class="pv2 pr3 code">QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ <a href="">change</a></td>
+            <td class="pv2 pr3 code"><span id="relayId">QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ</span> <a href="javascript://" id="changeRelay">change</a>
+              <div class="mv2 pa0 code f7 bg-white ba b--black-10 absolute" id="changeRelaySection" style="display:none">
+                <div class="chooseRelay pa2 bb b--black-10 hover-bg-light-gray pointer bg-animate">QmfQkD8pBSBCBxWEwFSu4XaDVSWK6bjnNuaWZjMyQbyDub</div>
+                <div class="chooseRelay pa2 bb b--black-10 hover-bg-light-gray pointer bg-animate">QmeESXh9wPib8Xz7hdRzHuYLDuEUgkYTSuujZ2phQfvznQ</div>
+              </div>
+            </td>
           </tr>
           <tr>
             <td class="pv2 pr4 ttu tracked gray">Peers</td>
@@ -50,7 +54,7 @@
 
     <section class="mw7 mw8-ns center pa4 ph5-ns pb3 f7">
       <!-- <p class="ttu tracked dark-pink b">Files list</p> -->
-      <a class="link dim ph3 pv2 mb2 dib white bg-dark-pink" href="#0">Add file +</a>
+      <a class="link dim ph3 pv2 mb2 dib white bg-dark-pink" href="#0" id="addFile">Add file +</a>
 
       <div class="center pa3 ph4 pb4 br2-ns ba b--black-10" style="display:none">
           <fieldset class="cf bn ma0 pa0">
@@ -69,7 +73,7 @@
       </div>
     </section>
 
-    <section class="mw7 mw8-ns center pa4 pt3 ph5 br2-ns ba b--black-10 mb4">
+    <section class="mw7 mw8-ns center pa4 pt3 ph5 br2-ns ba b--black-10 mb4" id="addFileSection" style="display:none">
       <fieldset class="cf bn ma0 pa0">
         <p class="f7 pa0 mb3 ttu tracked dark-pink b">Add file</p>
         <p class="">Add file from your device or enter IPFS hash</p>
@@ -134,6 +138,7 @@
 <br/>
 <br/>
 <br/>
+<script src="demo.js"></script>
 
   </body>
 </html>
